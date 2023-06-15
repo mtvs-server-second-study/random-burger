@@ -19,9 +19,6 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     // https://mvnrepository.com/artifact/org.springframework/spring-test
     testImplementation 'org.springframework:spring-test:5.2.9.RELEASE'
-
-
-
 }
 
 test {

@@ -1,11 +1,17 @@
-package com.onemorething.domain;
+package com.onemorething.domain.repository;
 
+import com.onemorething.common.BurgerDTO;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class BurgerRepository { //DB
+import java.util.Map;
 
- 1 , new Entity(1, 1, 2, 1, "참깨귀뚜라미레전드버거");
+@Repository
+public class BurgerRepository {
+
+
+    private final Map<Integer, BurgerDTO> burgerDTOMap;
+
+
 }
 /*
 # MAP<Integer, Burger> menu //
