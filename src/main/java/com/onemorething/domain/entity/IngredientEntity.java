@@ -9,9 +9,12 @@ import lombok.*;
 @ToString
 public class IngredientEntity {
 
+    /* 설명. 번호 */
     private int sequence;
 //    private String answer;
+    /* 설명. 재료 이름 */
     private String name;
+    /* 설명. 재료 가격 */
     private int price;
 
 }

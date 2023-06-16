@@ -4,7 +4,6 @@ package com.onemorething.application.controller;
 import com.onemorething.application.service.BurgerService;
 import com.onemorething.common.BurgerDTO;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 
 @Controller
 public class BurgerController {
@@ -21,6 +20,7 @@ public class BurgerController {
         System.out.println(result + "이 BurgerController로 넘어왔습니다.");
 
         burgerService.makeBurger(result);
+
         return null;
     }
 
