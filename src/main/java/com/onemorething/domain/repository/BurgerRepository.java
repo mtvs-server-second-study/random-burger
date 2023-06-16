@@ -10,16 +10,20 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
+
 @Repository
 public class BurgerRepository {
 
+    @Autowired
+    BurgerDB burger;
 
     ApplicationContext context =
             new AnnotationConfigApplicationContext(ContextConfiguration.class);
     BurgerDB burgerDB = context.getBean("burgerDB", BurgerDB.class);
 
-    public Collection<BurgerEntity> getBurgerMenu() {
-
-        return burgerDB.burgerList.values();
-    }
+//    public Collection<BurgerEntity> getBurgerMenu() {
+//
+//
+////        return burger.getBurgerList();
+//    }
 }

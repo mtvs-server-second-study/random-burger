@@ -16,10 +16,11 @@ public class BurgerController {
     BurgerDTO burgerDTO = new BurgerDTO();
     BurgerService burgerService = new BurgerService();
 
-    public String answerPatty(String answer) {
+    public String makeBurger(BurgerDTO result) {
 
-        System.out.println(answer + "이 BurgerController로 넘어왔습니다.");
+        System.out.println(result + "이 BurgerController로 넘어왔습니다.");
 
+        burgerService.makeBurger(result);
         return null;
     }
 

@@ -8,12 +8,11 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.Map;
 
-@Repository
+@Component
 public class BurgerDB {
 
-    public Map<String, BurgerEntity> burgerList;
+    private Map<String, BurgerEntity> burgerList;
 
-    @Autowired
     public BurgerDB() {
         this.burgerList = new HashMap<>();
 
@@ -36,5 +35,8 @@ public class BurgerDB {
 
     }
 
+    public Map<String, BurgerEntity> getBurgerList() {
+        return burgerList;
+    }
 }
 
