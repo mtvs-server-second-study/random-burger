@@ -1,41 +1,41 @@
 package com.onemorething.infra.db;
 
 import com.onemorething.domain.entity.BurgerEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 @Component
 public class BurgerDB {
 
-    private Map<String, BurgerEntity> burgerList;
+    private Map<Integer, BurgerEntity> burgerList;
 
     public BurgerDB() {
         this.burgerList = new HashMap<>();
 
-        burgerList.put("참깨귀뚜라미레전드버거", new BurgerEntity(1, "참깨빵", "양상추", "귀뚜라미튀김", "바베큐", 7000));
-        burgerList.put("민초귀뚜라미버거", new BurgerEntity(2, "참깨빵", "양상추", "귀뚜라미튀김", "민초", 7300));
-        burgerList.put("바베큐불고기버거", new BurgerEntity(3, "참깨빵", "양상추", "비프", "바베큐", 7500));
-        burgerList.put("민초불고기버거", new BurgerEntity(4, "참깨빵", "양상추", "비프", "민초", 7800));
-        burgerList.put("불지옥귀뚜라미버거", new BurgerEntity(5, "참깨빵", "페페론치노", "귀뚜라미튀김", "바베큐", 7200));
-        burgerList.put("불지옥민초귀뚜라미버거", new BurgerEntity(6, "참깨빵", "페페론치노", "귀뚜라미튀김", "민초", 7500));
-        burgerList.put("레전드불진호버거", new BurgerEntity(7, "참깨빵", "페페론치노", "비프", "바베큐", 7700));
-        burgerList.put("불지옥민초버거", new BurgerEntity(8, "참깨빵", "페페론치노", "비프", "민초", 8000));
-        burgerList.put("귀뚜라미꽃빵버거", new BurgerEntity(9, "꽃빵", "양상추", "귀뚜라미튀김", "바베큐", 7000));
-        burgerList.put("민초에빠진귀뚜라미버거", new BurgerEntity(10, "꽃빵", "양상추", "귀뚜라미튀김", "민초", 7300));
-        burgerList.put("꽃빵불고기버거", new BurgerEntity(11, "꽃빵", "양상추", "비프", "바베큐", 7500));
-        burgerList.put("꽃빵민초버거", new BurgerEntity(12, "꽃빵", "양상추", "비프", "민초", 7800));
-        burgerList.put("불지옥귀뚜라미에빠진꽃민초버거", new BurgerEntity(13, "꽃빵", "페페론치노", "귀뚜라미튀김", "바베큐", 8000));
-        burgerList.put("꽃빵불지옥귀뚜라미버거", new BurgerEntity(14, "꽃빵", "페페론치노", "귀뚜라미튀김", "바베큐", 7200));
-        burgerList.put("불지옥꽃빵버거", new BurgerEntity(15, "꽃빵", "페페론치노", "비프", "바베큐", 7700));
-        burgerList.put("불꽃민초버거", new BurgerEntity(16, "꽃빵", "페페론치노", "비프", "민초", 8000));
+        burgerList.put(1, new BurgerEntity(1,"참깨귀뚜라미레전드버거", "참깨빵", "양상추", "귀뚜라미튀김", "바베큐", 7000));
+        burgerList.put(2, new BurgerEntity(2, "민초귀뚜라미버거", "참깨빵", "양상추", "귀뚜라미튀김", "민초", 7300));
+        burgerList.put(3, new BurgerEntity(3, "바베큐불고기버거","참깨빵", "양상추", "비프", "바베큐", 7500));
+        burgerList.put(4, new BurgerEntity(4, "민초불고기버거", "참깨빵", "양상추", "비프", "민초", 7800));
+        burgerList.put(5, new BurgerEntity(5, "민초불고기버거","참깨빵", "페페론치노", "귀뚜라미튀김", "바베큐", 7200));
+        burgerList.put(6, new BurgerEntity(6, "불진호민초귀뚜라미버거", "참깨빵", "페페론치노", "귀뚜라미튀김", "민초", 7500));
+        burgerList.put(7, new BurgerEntity(7, "레전드불진호버거", "참깨빵", "페페론치노", "비프", "바베큐", 7700));
+        burgerList.put(8, new BurgerEntity(8, "불진호민초버거", "참깨빵", "페페론치노", "비프", "민초", 8000));
+        burgerList.put(9, new BurgerEntity(9, "귀뚜라미꽃빵버거", "꽃빵", "양상추", "귀뚜라미튀김", "바베큐", 7000));
+        burgerList.put(10, new BurgerEntity(10, "민초에빠진귀뚜라미버거", "꽃빵", "양상추", "귀뚜라미튀김", "민초", 7300));
+        burgerList.put(11, new BurgerEntity(11, "꽃빵불고기버거", "꽃빵", "양상추", "비프", "바베큐", 7500));
+        burgerList.put(12, new BurgerEntity(12, "꽃빵민초버거", "꽃빵", "양상추", "비프", "민초", 7800));
+        burgerList.put(13, new BurgerEntity(13,"불진호귀뚜라미에빠진꽃민초버거", "꽃빵", "페페론치노", "귀뚜라미튀김", "바베큐", 8000));
+        burgerList.put(14, new BurgerEntity(14, "꽃빵불진호귀뚜라미버거","꽃빵", "페페론치노", "귀뚜라미튀김", "바베큐", 7200));
+        burgerList.put(15, new BurgerEntity(15, "불진호꽃빵버거", "꽃빵", "페페론치노", "비프", "바베큐", 7700));
+        burgerList.put(16, new BurgerEntity(16, "불꽃민초버거","꽃빵", "페페론치노", "비프", "민초", 8000));
 
     }
 
-    public Map<String, BurgerEntity> getBurgerList() {
+    /* 설명. 버거 메뉴 전체 조회 */
+    public Map<Integer, BurgerEntity> getBurgerList() {
         return burgerList;
     }
 }

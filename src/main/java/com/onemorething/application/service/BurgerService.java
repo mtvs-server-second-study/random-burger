@@ -29,7 +29,7 @@ public class BurgerService {
         burgerEntity.setSequence(randomSequence);
 
         System.out.println(result + "이 BurgerService로 넘어왔습니다.");
-
+      
         return null;
     }
 
