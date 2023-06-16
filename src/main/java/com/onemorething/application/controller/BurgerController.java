@@ -13,15 +13,18 @@ public class BurgerController {
     로직거치고, 결과를 view에 전송
      */
 
-    BurgerDTO dto = BurgerDTO.getDto();
+    BurgerDTO burgerDTO = new BurgerDTO();
     BurgerService burgerService = new BurgerService();
+
     public String answerPatty() {
 
-//        System.out.println(answer + "이 BurgerController로 넘어왔습니다.");
+        String answer = burgerDTO.getAnswer();
 
-        String patty =  dto.getAnswerPatty();
+        System.out.println(answer + "이 BurgerController로 넘어왔습니다.");
 
-        System.out.println("patty = " + patty);
+//        String patty =  dto.getAnswerPatty();
+
+//        System.out.println("patty = " + patty);
 
 
 

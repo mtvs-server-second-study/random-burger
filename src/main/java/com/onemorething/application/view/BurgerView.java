@@ -9,6 +9,7 @@ public class BurgerView {
     /*
      main ,scanner 입력, 결과 출력
      */
+    BurgerDTO burgerDTO = new BurgerDTO();
     BurgerController burgerController = new BurgerController();
 
     Scanner sc=new Scanner(System.in);
@@ -42,12 +43,12 @@ public class BurgerView {
         System.out.println();
         System.out.println("(1) A         (2) B");
 
-//        char answer = sc.next().charAt(0);
-        String answer = sc.next();
-        System.out.println(answer);
+//        char answer = sc.next().charAt(0);    // 필기. 한 문자로 받기
+        String answer = sc.next();      // 필기. 문자열로 받아 service로 로직 설계
+        burgerDTO.setAnswer(answer);
+        System.out.println(answer); // 값 확인 용
 
-//        BurgerDTO dto = BurgerDTO.getDto();
-//        dto.setAnswerPatty(answer);
+        // 필기. 컨트롤러 메소드 실행
         burgerController.answerPatty();
 
     }

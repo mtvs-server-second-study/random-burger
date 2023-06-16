@@ -11,12 +11,10 @@ public class BurgerService {
     레포지토리 전송
      */
 
-    BurgerDTO dto = BurgerDTO.getDto();
-
     public void servicePatty() {
 
-        String answerPatty = dto.getAnswerPatty();
-        System.out.println(answerPatty + "이 servicePatty로 넘어왔습니다.");
+//        String answerPatty = dto.getAnswerPatty();
+//        System.out.println(answerPatty + "이 servicePatty로 넘어왔습니다.");
 
     }
 
