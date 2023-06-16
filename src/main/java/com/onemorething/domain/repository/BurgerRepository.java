@@ -8,8 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-
 
 @Repository
 public class BurgerRepository {
@@ -21,9 +19,15 @@ public class BurgerRepository {
             new AnnotationConfigApplicationContext(ContextConfiguration.class);
     BurgerDB burgerDB = context.getBean("burgerDB", BurgerDB.class);
 
-//    public Collection<BurgerEntity> getBurgerMenu() {
-//
-//
-////        return burger.getBurgerList();
-//    }
+    public String getResult(BurgerEntity ent) {
+        String result = " ";
+
+        for (BurgerEntity burger : burgerDB.getBurgerList().values()) {
+            if (burger.getBread().equals(ent.getBread()) || burger.getVegetable().equals(ent.getVegetable())
+                    || burger.getPatty().equals(ent.getPatty()) || burger.getSource().equals(ent.getSource())
+            ) { result = String.valueOf(burgerDB.getBurgerList().get(burger)); }
+        }
+
+        return result;
+    }
 }
