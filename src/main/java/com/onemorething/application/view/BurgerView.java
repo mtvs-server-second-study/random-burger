@@ -45,11 +45,10 @@ public class BurgerView {
 
 //        char answer = sc.next().charAt(0);    // 필기. 한 문자로 받기
         String answer = sc.next();      // 필기. 문자열로 받아 service로 로직 설계
-        burgerDTO.setAnswer(answer);
         System.out.println(answer); // 값 확인 용
 
         // 필기. 컨트롤러 메소드 실행
-        burgerController.answerPatty();
+        burgerController.answerPatty(answer);
 
     }
 }

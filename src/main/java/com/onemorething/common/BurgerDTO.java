@@ -11,14 +11,8 @@ import java.io.IOException;
 @ToString
 public class BurgerDTO {  //입력값 담음
 
-//    private static BurgerDTO dto = new BurgerDTO();
-
     private int index;
     private String answer;
-
-//    public static BurgerDTO getDto(){
-//        return dto;
-//    }
 
 }
 

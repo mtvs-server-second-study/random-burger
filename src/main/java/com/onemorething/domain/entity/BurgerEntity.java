@@ -9,8 +9,6 @@ import lombok.*;
 @ToString
 public class BurgerEntity { //DB에 넣을것 파싱
 
-//    private static BurgerEntity entity = new BurgerEntity();
-
     private int sequence;
     private String bread;
     private String vegetable;
@@ -18,9 +16,6 @@ public class BurgerEntity { //DB에 넣을것 파싱
     private String source;
     private int price;
 
-//    public static BurgerEntity getBurgerEntity() {
-//        return entity;
-//    }
 }
 
 /*

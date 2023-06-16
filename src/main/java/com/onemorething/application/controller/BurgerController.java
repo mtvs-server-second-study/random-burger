@@ -16,17 +16,9 @@ public class BurgerController {
     BurgerDTO burgerDTO = new BurgerDTO();
     BurgerService burgerService = new BurgerService();
 
-    public String answerPatty() {
-
-        String answer = burgerDTO.getAnswer();
+    public String answerPatty(String answer) {
 
         System.out.println(answer + "이 BurgerController로 넘어왔습니다.");
-
-//        String patty =  dto.getAnswerPatty();
-
-//        System.out.println("patty = " + patty);
-
-
 
         return null;
     }
