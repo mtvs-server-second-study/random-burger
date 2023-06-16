@@ -17,6 +17,6 @@ public class VegetableDB {
         vegetableList.put(2, new IngredientEntity(2, "페퍼론치노", 1700));
     }
 
-    public Map<Integer, IngredientEntity> getVegetableList() {return vegetableList};
+    public Map<Integer, IngredientEntity> getVegetableList() {return vegetableList;}
 
 }

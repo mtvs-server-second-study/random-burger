@@ -19,5 +19,5 @@ public class PattyDB {
 
     }
 
-    public Map<Integer, IngredientEntity> getPattyList() {return pattyList};
+    public Map<Integer, IngredientEntity> getPattyList() {return pattyList;}
 }

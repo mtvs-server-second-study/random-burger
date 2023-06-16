@@ -18,6 +18,6 @@ public class BreadDB {
         breadList.put(2, new IngredientEntity(2, "꽃빵", 2000));
     }
 
-    public Map<Integer, IngredientEntity> getBreadList() {return breadList};
+    public Map<Integer, IngredientEntity> getBreadList() {return breadList;}
 
 }

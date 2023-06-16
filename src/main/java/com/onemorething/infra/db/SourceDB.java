@@ -19,6 +19,6 @@ public class SourceDB {
 
     }
 
-    public Map<Integer, IngredientEntity> getSourceList() {return sourceList};
+    public Map<Integer, IngredientEntity> getSourceList() {return sourceList;}
 
 }
