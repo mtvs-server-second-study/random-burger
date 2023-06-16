@@ -1,7 +1,14 @@
 package com.onemorething.application.service;
 
 import com.onemorething.common.BurgerDTO;
+import com.onemorething.domain.entity.BurgerEntity;
+import com.onemorething.domain.repository.BurgerRepository;
+import com.onemorething.infra.db.BurgerDB;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class BurgerService {
@@ -11,11 +18,19 @@ public class BurgerService {
     레포지토리 전송
      */
 
-    public void makeBurger(BurgerDTO result) {
+    private BurgerEntity burgerEntity;
+//
+//    BurgerDB burgerDB = new BurgerDB();
+    public String makeBurger(BurgerDTO result) {
 
-//        String answerPatty = dto.getAnswerPatty();
-        System.out.println(result + "이 servicePatty로 넘어왔습니다.");
+        Random random = new Random();
+        int randomSequence = random.nextInt();
 
+        burgerEntity.setSequence(randomSequence);
+
+        System.out.println(result + "이 BurgerService로 넘어왔습니다.");
+
+        return null;
     }
 
 }
