@@ -2,7 +2,7 @@ package com.onemorething.application.controller;
 
 
 import com.onemorething.application.service.BurgerService;
-import com.onemorething.common.BurgerDTO;
+import com.onemorething.common.AnswerDTO;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -12,10 +12,10 @@ public class BurgerController {
     로직거치고, 결과를 view에 전송
      */
 
-    BurgerDTO burgerDTO = new BurgerDTO();
+    AnswerDTO answerDTO = new AnswerDTO();
     BurgerService burgerService = new BurgerService();
 
-    public String makeBurger(BurgerDTO result) {
+    public String makeBurger(AnswerDTO result) {
 
         System.out.println(result + "이 BurgerController로 넘어왔습니다.");
 

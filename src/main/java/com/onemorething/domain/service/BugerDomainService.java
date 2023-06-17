@@ -23,6 +23,18 @@ public class BugerDomainService { //로직
         return input;
     }
 
+    // 설명. 정한 범위에서 자연수가 나오는 난수 발생기
+    public int[] getRandomInt(int index, int domain){
+
+        int[] randomSequence = new int[index];
+        for (int i=0; i<randomSequence.length; i++){
+            randomSequence[i] = (int)(Math.random() + domain);   // 설명. 1과 2만 나오는 난수 발생기
+        }
+        return randomSequence;
+    }
+
+    //
+
 
 
 }
