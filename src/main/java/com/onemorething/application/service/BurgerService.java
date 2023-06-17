@@ -3,7 +3,6 @@ package com.onemorething.application.service;
 import com.onemorething.common.AnswerDTO;
 import com.onemorething.domain.entity.BurgerEntity;
 import com.onemorething.domain.repository.BurgerRepository;
-import com.onemorething.domain.repository.IngredientRepository;
 import com.onemorething.domain.service.BurgerDomainService;
 import com.onemorething.infra.db.*;
 import org.springframework.stereotype.Service;
@@ -20,7 +19,14 @@ public class BurgerService {
     BurgerRepository burgerRepository = new BurgerRepository();
     IngredientRepository ingredientRepository = new IngredientRepository();
 
-    BurgerDomainService burgerDomainService = new BurgerDomainService();
+    BreadDB breadDB;
+    VegetableDB vegetableDB;
+    PattyDB pattyDB;
+    SourceDB sourceDB;
+    AnswerDTO answerDTO;
+    AnotherAnswerDTO anotherAnswerDTO;
+    BurgerRepository burgerRepository;
+    BurgerDomainService burgerDomainService;
 
     public String makeBurger(AnswerDTO result) {
 
