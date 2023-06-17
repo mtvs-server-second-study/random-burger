@@ -24,7 +24,7 @@ public class BurgerView {
     /* 설명. 게임 시작 */
     public void startGame() {
 
-        /* 설명. 햄버거 ascii art */
+        /* 햄버거 ascii art */
         System.out.println("        ████████████████████            \n" +
                 "      ██                    ██          \n" +
                 "    ██    ██          ██      ██        \n" +
