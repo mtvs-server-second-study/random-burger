@@ -28,7 +28,6 @@ public class BurgerService {
 
         /* 설명. 난수 배열 발생기, 자연수 4개, 1 혹은 2 */
         int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
-        // 1 2 2 1
 
         int breadNum = randomSequence[0];
         int anotherBreadNum = breadNum == 1?2:1;
