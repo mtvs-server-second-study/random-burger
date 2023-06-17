@@ -1,7 +1,7 @@
 package com.onemorething.application.view;
 
 import com.onemorething.application.controller.BurgerController;
-import com.onemorething.common.BurgerDTO;
+import com.onemorething.common.AnswerDTO;
 import com.onemorething.domain.service.BugerDomainService;
 
 import java.util.Scanner;
@@ -10,7 +10,7 @@ public class BurgerView {
     /*
      main ,scanner 입력, 결과 출력
      */
-//    BurgerDTO burgerDTO = new BurgerDTO();
+//    AnswerDTO burgerDTO = new AnswerDTO();
     BurgerController burgerController = new BurgerController();
     BugerDomainService burgerDomainService = new BugerDomainService();
 
@@ -71,7 +71,7 @@ public class BurgerView {
         source = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
 
         /* 설명. 선택 사항들 컨트롤러로 전달 */
-        BurgerDTO result = new BurgerDTO(bread, vegetable, patty, source);
+        AnswerDTO result = new AnswerDTO(bread, vegetable, patty, source);
         burgerController.makeBurger(result);
 
     }

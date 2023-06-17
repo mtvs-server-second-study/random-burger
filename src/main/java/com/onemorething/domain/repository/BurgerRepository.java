@@ -13,19 +13,15 @@ import org.springframework.stereotype.Repository;
 public class BurgerRepository {
 
     @Autowired
-    BurgerDB burger;
-
-    ApplicationContext context =
-            new AnnotationConfigApplicationContext(ContextConfiguration.class);
-    BurgerDB burgerDB = context.getBean("burgerDB", BurgerDB.class);
+    private BurgerDB burgerDB;
 
     /* 설명. 답변에 대한 완성 버거 제공 */
     public String getResult(BurgerEntity ent) {
         String result = " ";
 
         for (BurgerEntity burger : burgerDB.getBurgerList().values()) {
-            if (burger.getBread().equals(ent.getBread()) || burger.getVegetable().equals(ent.getVegetable())
-                    || burger.getPatty().equals(ent.getPatty()) || burger.getSource().equals(ent.getSource())
+            if (burger.getBread().equals(ent.getBread()) && burger.getVegetable().equals(ent.getVegetable())
+                    && burger.getPatty().equals(ent.getPatty()) && burger.getSource().equals(ent.getSource())
             ) {
                 result = burger.getBurgerName();
             }

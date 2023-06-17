@@ -37,7 +37,7 @@ public class IngredientRepository {
 //    PattyDB pattyDB = context.getBean("pattyDB", PattyDB.class);
 //    SourceDB sourceDB = context.getBean("sourceDB", SourceDB.class);
 
-    /* 설명. */
+    /* 설명. 빵 선택*/
     private String getBread(int seq) {return breadDB.getBreadList().get(seq).getName();}
 
     private String getVegetable(int seq) { return vegetableDB.getVegetableList().get(seq).getName(); }
