@@ -3,7 +3,6 @@ package com.onemorething.domain.service;
 import com.onemorething.infra.db.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.Scanner;
 
 @Service
@@ -13,6 +12,7 @@ public class BurgerDomainService { //로직
    2. if toEquals a b A B 아니면 다 처내면 됨
 
      */
+
 
     @Autowired
     private BreadDB breadDB;
@@ -41,11 +41,10 @@ public class BurgerDomainService { //로직
     }
 
     // 설명. 정한 범위에서 자연수가 나오는 난수 발생기
-    public int[] getRandomInt(int index, int domain){
-
+    public int[] getRandomInt(int index, int lowerBound, int highBound){
         int[] randomSequence = new int[index];
         for (int i=0; i<randomSequence.length; i++){
-            randomSequence[i] = (int)(Math.random() + domain);   // 설명. 1과 2만 나오는 난수 발생기
+            randomSequence[i] = (int)(Math.random()*(highBound - lowerBound +1)) + 1;
         }
         return randomSequence;
     }

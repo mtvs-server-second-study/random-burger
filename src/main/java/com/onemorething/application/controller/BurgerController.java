@@ -19,9 +19,10 @@ public class BurgerController {
 
         System.out.println(result + "이 BurgerController로 넘어왔습니다.");
 
-        burgerService.makeBurger(result);
+       String realResult = burgerService.makeBurger(result);
 
-        return null;
+        System.out.println("realResult = " + realResult);
+        return realResult;
     }
 
 }
