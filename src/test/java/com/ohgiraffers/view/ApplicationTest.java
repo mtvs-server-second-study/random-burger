@@ -9,9 +9,10 @@ class ApplicationTest {
     @Test
     public static void main(String[] args) {
 
-        int result = (int)(Math.random()+2);
 
-        System.out.println("result = " + result);
+        int anotherAns = 1 == 1?2:1;
+
+        System.out.println("result = " + anotherAns);
     }
 
 }

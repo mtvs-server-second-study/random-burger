@@ -17,17 +17,13 @@ import java.util.Map;
 @Repository
 public class IngredientRepository {
 
-    @Autowired
-    BreadDB breadDB;
+    BreadDB breadDB = new BreadDB();
 
-    @Autowired
-    VegetableDB vegetableDB;
+    VegetableDB vegetableDB = new VegetableDB();
 
-    @Autowired
-    PattyDB pattyDB;
+    PattyDB pattyDB = new PattyDB();
 
-    @Autowired
-    SourceDB sourceDB;
+    SourceDB sourceDB = new SourceDB();
 
 //    ApplicationContext context =
 //            new AnnotationConfigApplicationContext(ContextConfiguration.class);
@@ -38,13 +34,13 @@ public class IngredientRepository {
 //    SourceDB sourceDB = context.getBean("sourceDB", SourceDB.class);
 
     /* 설명. 빵 선택*/
-    private String getBread(int seq) {return breadDB.getBreadList().get(seq).getName();}
+    public String getBread(int seq) {return breadDB.getBreadList().get(seq).getName();}
 
-    private String getVegetable(int seq) { return vegetableDB.getVegetableList().get(seq).getName(); }
+    public String getVegetable(int seq) { return vegetableDB.getVegetableList().get(seq).getName(); }
 
-    private String getPatty(int seq) { return pattyDB.getPattyList().get(seq).getName(); }
+    public String getPatty(int seq) { return pattyDB.getPattyList().get(seq).getName(); }
 
-    private String getSource(int seq) { return sourceDB.getSourceList().get(seq).getName(); }
+    public String getSource(int seq) { return sourceDB.getSourceList().get(seq).getName(); }
 
 
 }

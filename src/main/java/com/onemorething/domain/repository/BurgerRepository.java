@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public class BurgerRepository {
 
     @Autowired
-    private BurgerDB burgerDB;
+    private BurgerDB burgerDB = new BurgerDB();
 
     /* 설명. 답변에 대한 완성 버거 제공 */
     public String getResult(BurgerEntity ent) {
