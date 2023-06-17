@@ -5,7 +5,7 @@ import com.onemorething.common.AnswerDTO;
 import com.onemorething.domain.entity.BurgerEntity;
 import com.onemorething.domain.entity.IngredientEntity;
 import com.onemorething.domain.repository.BurgerRepository;
-import com.onemorething.domain.service.BugerDomainService;
+import com.onemorething.domain.service.BurgerDomainService;
 import com.onemorething.infra.db.*;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class BurgerService {
     AnswerDTO answerDTO;
     AnotherAnswerDTO anotherAnswerDTO;
     BurgerRepository burgerRepository;
-    BugerDomainService bugerDomainService;
+    BurgerDomainService burgerDomainService;
 
     public String makeBurger(AnswerDTO result) {
 //

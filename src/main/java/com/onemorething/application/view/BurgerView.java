@@ -2,7 +2,7 @@ package com.onemorething.application.view;
 
 import com.onemorething.application.controller.BurgerController;
 import com.onemorething.common.AnswerDTO;
-import com.onemorething.domain.service.BugerDomainService;
+import com.onemorething.domain.service.BurgerDomainService;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class BurgerView {
      */
 //    AnswerDTO burgerDTO = new AnswerDTO();
     BurgerController burgerController = new BurgerController();
-    BugerDomainService burgerDomainService = new BugerDomainService();
+    BurgerDomainService burgerDomainService = new BurgerDomainService();
 
     private String bread;
     private String vegetable;

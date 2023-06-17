@@ -1,16 +1,33 @@
 package com.onemorething.domain.service;
 
+import com.onemorething.infra.db.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
 @Service
-public class BugerDomainService { //로직
+public class BurgerDomainService { //로직
     /*
    1. 입력값 Char
    2. if toEquals a b A B 아니면 다 처내면 됨
 
      */
+
+    @Autowired
+    private BreadDB breadDB;
+
+    @Autowired
+    private BurgerDB burgerDB;
+
+    @Autowired
+    private PattyDB pattyDB;
+
+    @Autowired
+    private SourceDB sourceDB;
+
+    @Autowired
+    private VegetableDB vegetableDB;
 
     public String getInput(Scanner sc, String option1, String option2) {
         String input = sc.next().toUpperCase();
