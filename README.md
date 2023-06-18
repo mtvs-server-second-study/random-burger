@@ -65,7 +65,8 @@
 
 
 ## 패키지 구조
-<img width="245" alt="image" src="https://github.com/mtvs-server-second-study/random-burger/assets/134987216/eb69d471-c0e8-4643-8ec8-3288aed3318c">
+![image](https://github.com/mtvs-server-second-study/random-burger/assets/115992753/ace76f47-c80d-4d8b-b91e-e0a4f9b4380c)
+
 
 
   
