@@ -29,8 +29,4 @@ public class BurgerDomainService { //로직
         return randomSequence;
     }
 
-    //
-
-
-
 }
