@@ -67,12 +67,14 @@ public class BurgerView {
         /* 설명. 시작 알림 */
         while (true) {
             System.out.println("=^=^=^=^=^=^=^=^=^=^=^=^=Random Burger=^=^=^=^=^=^=^=^=^=^=^=^=\n");
-            System.out.println("게임을 시작하시겠습니까?🎮\n");
+            System.out.println("랜덤 버거집에 입장하시겠습니까?🎮\n");
             System.out.println("1. Yes               2. No\n");
 
             if (sc.hasNextInt()) {   // 필기. 입력이 Int이면 true, 아니면 false
                 int answer = sc.nextInt();
                 if (answer == 1) {
+                    System.out.println("띠링~🛎️");
+                    System.out.println("?? : 이랏샤이마셍~~~!\n");
                     break;
                 }
                 if (answer != 1 && answer != 2) {
@@ -162,6 +164,16 @@ public class BurgerView {
         source = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
         anotherSource = source.trim().equals("A")? "A" : "B";
         System.out.println("████████████████████████████████████    \n\n\n");
+
+        System.out.println("모든 선택이 완료되었습니다.");
+        System.out.println("자, 이제 30년 경력의 주방장이 요리를 시작합니다~~!");
+        System.out.println("치익~~~~~");
+
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         /* 설명. 선택 사항들 컨트롤러로 전달 */
         String resultBurger = burgerController.makeBurger();
