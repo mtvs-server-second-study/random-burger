@@ -1,11 +1,8 @@
 package com.onemorething.domain.repository;
 
-import com.onemorething.ContextConfiguration;
 import com.onemorething.domain.entity.BurgerEntity;
 import com.onemorething.infra.db.BurgerDB;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Repository;
 
 
@@ -13,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class BurgerRepository {
 
     @Autowired
-    private BurgerDB burgerDB = new BurgerDB();
+    private BurgerDB burgerDB;
 
     /* 설명. 답변에 대한 완성 버거 제공 */
     public String getResult(BurgerEntity ent) {

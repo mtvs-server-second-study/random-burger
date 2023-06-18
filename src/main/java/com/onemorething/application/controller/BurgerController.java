@@ -2,23 +2,18 @@ package com.onemorething.application.controller;
 
 
 import com.onemorething.application.service.BurgerService;
-import com.onemorething.common.AnotherAnswerDTO;
 import com.onemorething.common.AnotherResultDTO;
-import com.onemorething.common.AnswerDTO;
 import com.onemorething.common.ResultDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.util.Scanner;
 
 @Controller
 public class BurgerController {
-    /*
-    view에서 받은 입력을 Application.service 전달
-    로직거치고, 결과를 view에 전송
-     */
 
-    AnswerDTO answerDTO = new AnswerDTO();
-    BurgerService burgerService = new BurgerService();
+    @Autowired
+    BurgerService burgerService;
 
     /* 설명. 입력 검증 로직 */
     public String getInputController(Scanner sc, String option1, String option2) {

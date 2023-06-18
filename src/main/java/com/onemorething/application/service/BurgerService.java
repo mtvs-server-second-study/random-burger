@@ -1,14 +1,12 @@
 package com.onemorething.application.service;
 
-import com.onemorething.common.AnotherAnswerDTO;
 import com.onemorething.common.AnotherResultDTO;
-import com.onemorething.common.AnswerDTO;
 import com.onemorething.common.ResultDTO;
 import com.onemorething.domain.entity.BurgerEntity;
 import com.onemorething.domain.repository.BurgerRepository;
 import com.onemorething.domain.repository.IngredientRepository;
 import com.onemorething.domain.service.BurgerDomainService;
-import com.onemorething.infra.db.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
@@ -16,9 +14,12 @@ import java.util.Scanner;
 @Service
 public class BurgerService {
 
-    BurgerRepository burgerRepository = new BurgerRepository();
-    IngredientRepository ingredientRepository = new IngredientRepository();
-    BurgerDomainService burgerDomainService = new BurgerDomainService();
+    @Autowired
+    BurgerRepository burgerRepository;
+    @Autowired
+    IngredientRepository ingredientRepository;
+    @Autowired
+    BurgerDomainService burgerDomainService;
 
     int breadNum=0;
     int vegetableNum=0;
@@ -35,7 +36,14 @@ public class BurgerService {
     public String makeBurgerService() {
 
         /* 설명. 선택지 랜덤 번호 부여 */
-        setRandomNumber();
+        /* 설명. 난수 배열 발생기, 자연수 4개, 1 혹은 2 */
+        int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
+
+        /* 설명. 랜덤 값 필드 부여 */
+        breadNum = randomSequence[0];
+        vegetableNum = randomSequence[1];
+        pattyNum = randomSequence[2];
+        sourceNum = randomSequence[3];
 
         /* 설명. 부여된 랜덤 번호로 해당하는 재료 선택 */
         String answerBread = ingredientRepository.getBread(breadNum);
@@ -77,20 +85,6 @@ public class BurgerService {
         AnotherResultDTO result = new AnotherResultDTO(anotherAnsBread, anotherAnsVegetable, anotherAnsPatty, anotherAnsSource);
 
         return result;
-    }
-
-    public void setRandomNumber() {
-
-        /* 설명. 도메인 Service 로직 */
-        /* 설명. 난수 배열 발생기, 자연수 4개, 1 혹은 2 */
-        int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
-
-        /* 설명. 랜덤 값 필드 부여 */
-        breadNum = randomSequence[0];
-        vegetableNum = randomSequence[1];
-        pattyNum = randomSequence[2];
-        sourceNum = randomSequence[3];
-
     }
 
 }

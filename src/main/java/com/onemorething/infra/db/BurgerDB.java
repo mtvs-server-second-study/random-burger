@@ -3,7 +3,6 @@ package com.onemorething.infra.db;
 import com.onemorething.domain.entity.BurgerEntity;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

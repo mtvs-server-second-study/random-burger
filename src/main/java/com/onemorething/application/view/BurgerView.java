@@ -2,18 +2,19 @@ package com.onemorething.application.view;
 
 import com.onemorething.application.controller.BurgerController;
 import com.onemorething.common.AnotherResultDTO;
-import com.onemorething.common.AnswerDTO;
 import com.onemorething.common.ResultDTO;
 import com.onemorething.domain.service.BurgerDomainService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class BurgerView {
-    BurgerController burgerController = new BurgerController();
-    BurgerDomainService burgerDomainService = new BurgerDomainService();
-    ResultDTO resultDTO = new ResultDTO();
-    AnotherResultDTO anotherResultDTO = new AnotherResultDTO();
-
+    @Autowired
+    BurgerController burgerController;
+    @Autowired
+    BurgerDomainService burgerDomainService;
     private String bread;
     private String anotherBread;
     private String vegetable;
@@ -186,7 +187,7 @@ public class BurgerView {
                 "  ██                            ██       | | | |  __/ | | (_) |\n" +
                 "    ████████████████████████████         |_| |_|\\___|_|_|\\___/");
         System.out.println("이름하야~~~   " + "🍔🍔" + resultBurger + "🍔🍔");
-//        System.out.println("선택된 재료 : ");
+        System.out.println("선택된 재료 : ");
         System.out.println("빵 : " + ingredient.getBread() + ", 채소 : " + ingredient.getVegetable() +
                 ", 패티 : " + ingredient.getPatty() + ", 소스 : " + ingredient.getSource());
 
@@ -226,7 +227,6 @@ public class BurgerView {
             System.out.println("게임을 종료합니다.");
             return;
         }
-
 
     }
 }
