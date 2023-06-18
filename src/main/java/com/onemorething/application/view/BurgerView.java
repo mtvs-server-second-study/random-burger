@@ -204,7 +204,7 @@ public class BurgerView {
                 ", 패티 : " + ingredient.getPatty() + ", 소스 : " + ingredient.getSource());
 
         System.out.println("재료가 공개된 질문을 보시겠습니까?\n");
-        System.out.println("1. Yes               2. No\n");
+        System.out.println("1. Yes               2. 종료(아무 키나 입력해주세요.)\n");
         int answer = sc.nextInt();
         if (answer == 1) {
 
