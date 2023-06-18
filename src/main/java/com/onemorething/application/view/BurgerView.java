@@ -7,10 +7,6 @@ import com.onemorething.domain.service.BurgerDomainService;
 import java.util.Scanner;
 
 public class BurgerView {
-    /*
-     main ,scanner 입력, 결과 출력
-     */
-//    AnswerDTO burgerDTO = new AnswerDTO();
     BurgerController burgerController = new BurgerController();
     BurgerDomainService burgerDomainService = new BurgerDomainService();
 
@@ -51,7 +47,7 @@ public class BurgerView {
         /* 설명. 빵 선택 질문 */
         System.out.println("빵을 선택합니다.🥯 알파벳을 입력해주세요.😋\n");
         System.out.println(
-                "         ____                      ____\n" +
+                        "         ____                      ____\n" +
                         "        |__   \\                   |__   \\ \n" +
                         "            ) |                       ) |\n" +
                         "           / /                       / /   \n"  +
@@ -61,6 +57,9 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 빵 선택 */
         bread = burgerDomainService.getInput(sc, "A", "B");
+        System.out.println("  ████  ████      ██████  ████  ██       \n" +
+                        "  ██                            ██       \n" +
+                        "    ████████████████████████████         ");
 
         /* 설명. 야채 선택 질문 */
         System.out.println("야채를 선택합니다.🥬 알파벳을 입력해주세요.😋\n");
@@ -75,9 +74,10 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 야채 선택*/
         vegetable = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.println("██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██     \n" +
+                           "  ██░░██░░░░██████░░░░░░██░░░░████       ");
 
         /* 설명. 패티 선택 질문 */
-
         System.out.println("패티를 선택합니다.🥩 알파벳을 입력해주세요.😋\n");
         System.out.println(
                 "         ____                      ____\n" +
@@ -91,6 +91,8 @@ public class BurgerView {
         /* 설명. 패티 선택 */
 //        char answer = sc.next().charAt(0);    // 필기. 한 문자로 받기
         patty = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.println("██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██    \n" +
+                           "  ████████████████████████████████        \n");
 
         /* 설명. 소스 선택 질문 */
         System.out.println("소스를 선택합니다.🧂 알파벳을 입력해주세요.😋\n");
@@ -105,6 +107,7 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 소스 선택 */
         source = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.println("████████████████████████████████████    ");
 
         /* 설명. 선택 사항들 컨트롤러로 전달 */
         AnswerDTO result = new AnswerDTO(bread, vegetable, patty, source);
