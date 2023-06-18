@@ -1,7 +1,9 @@
 package com.onemorething.application.view;
 
 import com.onemorething.application.controller.BurgerController;
+import com.onemorething.common.AnotherResultDTO;
 import com.onemorething.common.AnswerDTO;
+import com.onemorething.common.ResultDTO;
 import com.onemorething.domain.service.BurgerDomainService;
 
 import java.util.Scanner;
@@ -9,11 +11,17 @@ import java.util.Scanner;
 public class BurgerView {
     BurgerController burgerController = new BurgerController();
     BurgerDomainService burgerDomainService = new BurgerDomainService();
+    ResultDTO resultDTO = new ResultDTO();
+    AnotherResultDTO anotherResultDTO = new AnotherResultDTO();
 
     private String bread;
+    private String anotherBread;
     private String vegetable;
+    private String anotherVegetable;
     private String patty;
+    private String anotherPatty;
     private String source;
+    private String anotherSource;
 
     Scanner sc = new Scanner(System.in);
 
@@ -56,16 +64,25 @@ public class BurgerView {
                 "__________________________________________________________________\n\n\n" );
       
         /* 설명. 시작 알림 */
-        boolean iter = true;
-        while (iter) {
+        while (true) {
             System.out.println("=^=^=^=^=^=^=^=^=^=^=^=^=Random Burger=^=^=^=^=^=^=^=^=^=^=^=^=\n");
             System.out.println("게임을 시작하시겠습니까?🎮\n");
             System.out.println("1. Yes               2. No\n");
-            int result = sc.nextInt();
 
-            /* 설명. No 누를 시 무한 루프*/
-            if (result == 1) {
-                iter = false;
+            if (sc.hasNextInt()) {   // 필기. 입력이 Int이면 true, 아니면 false
+                int answer = sc.nextInt();
+                if (answer == 1) {
+                    break;
+                }
+                if (answer != 1 && answer != 2) {
+                    System.out.println("1 혹은 2로만 작성해주세요!");
+                } else if (answer == 2) {   // 필기. 게임 종료
+                    System.out.println("게임을 종료합니다.");
+                    return;
+                }
+            } else {    // 필기. 문자 입력 시
+                sc.next();  // this is important, consume the invalid token
+                System.out.println("1 혹은 2로만 작성해주세요!");
             }
         }
 
@@ -81,7 +98,9 @@ public class BurgerView {
                         "        ========                  ========");
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 빵 선택 */
-        bread = burgerDomainService.getInput(sc, "A", "B");
+        System.out.print("빵 선택 : ");
+        bread = burgerController.getInputController(sc, "A", "B");
+        anotherBread = bread.trim().equals("A")? "B" : "A";
         System.out.println("  ████  ████      ██████  ████  ██       \n" +
                         "  ██                            ██       \n" +
                         "    ████████████████████████████         \n");
@@ -100,7 +119,9 @@ public class BurgerView {
                         "        ========                  ========");
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 야채 선택*/
-        vegetable = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.print("채소 선택 : ");
+        vegetable = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        anotherVegetable = vegetable.trim().equals("A")? "B":"A";
         System.out.println("██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██     \n" +
                            "  ██░░██░░░░██████░░░░░░██░░░░████       \n\n\n");
 
@@ -117,8 +138,9 @@ public class BurgerView {
                         "        ========                  ========");
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 패티 선택 */
-//        char answer = sc.next().charAt(0);    // 필기. 한 문자로 받기
-        patty = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.print("패티 선택 : ");
+        patty = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        anotherPatty = patty.trim().equals("A")? "B":"A";
         System.out.println("██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██    \n" +
                            "  ████████████████████████████████        \n\n\n");
 
@@ -135,11 +157,15 @@ public class BurgerView {
                         "        ========                  ========");
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 소스 선택 */
-        source = burgerDomainService.getInput(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        System.out.print("소스 선택 : ");
+        source = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+        anotherSource = source.trim().equals("A")? "A" : "B";
         System.out.println("████████████████████████████████████    \n\n\n");
 
         /* 설명. 선택 사항들 컨트롤러로 전달 */
-        AnswerDTO result = new AnswerDTO(bread, vegetable, patty, source);
+        String resultBurger = burgerController.makeBurger();
+        ResultDTO ingredient = burgerController.setIngCtrl();
+        AnotherResultDTO anotherIngredient = burgerController.setAnotherIngCtrl();
 
         /* 설명.*/
         System.out.println("=^=^=^=^=^=^=^=^=^=^=^=^=Random Burger=^=^=^=^=^=^=^=^=^=^=^=^=\n");
@@ -159,7 +185,48 @@ public class BurgerView {
                 "  ████  ████      ██████  ████  ██       |  _  |/ _ \\ | |/ _ \\\n" +
                 "  ██                            ██       | | | |  __/ | | (_) |\n" +
                 "    ████████████████████████████         |_| |_|\\___|_|_|\\___/");
-        System.out.println("이름하야~~~   " + "🍔🍔" + burgerController.makeBurger(result) + "🍔🍔\n");
+        System.out.println("이름하야~~~   " + "🍔🍔" + resultBurger + "🍔🍔");
+//        System.out.println("선택된 재료 : ");
+        System.out.println("빵 : " + ingredient.getBread() + ", 채소 : " + ingredient.getVegetable() +
+                ", 패티 : " + ingredient.getPatty() + ", 소스 : " + ingredient.getSource());
+
+        System.out.println("재료가 공개된 질문을 보시겠습니까?\n");
+        System.out.println("1. Yes               2. No\n");
+        int answer = sc.nextInt();
+        if (answer == 1) {
+
+            System.out.println("선택지를 오픈합니다.\n");
+            System.out.println("선택된 재료 : " + bread + ", " + vegetable + ", " + patty + ", " + source);
+            System.out.println("빵을 선택합니다.🥯 알파벳을 입력해주세요.😋\n");
+            if (bread.trim().equals("A")) {
+                System.out.println("A : " + ingredient.getBread() + "                     B : " + anotherIngredient.getAnotherBread() + "\n");
+            } else {
+                System.out.println("A : " + anotherIngredient.getAnotherBread() + "                     B : " + ingredient.getBread() + "\n");
+            }
+            System.out.println("야채를 선택합니다.🥬 알파벳을 입력해주세요.😋\n");
+            if (vegetable.trim().equals("A")) {
+                System.out.println("A : " + ingredient.getVegetable() + "                     B : " + anotherIngredient.getAnotherVegetable() + "\n");
+            } else {
+                System.out.println("A : " + anotherIngredient.getAnotherVegetable() + "                     B : " + ingredient.getVegetable() + "\n");
+            }
+            System.out.println("패티를 선택합니다.🥩 알파벳을 입력해주세요.😋\n");
+            if (patty.trim().equals("A")) {
+                System.out.println("A : " + ingredient.getPatty() + "                     B : " + anotherIngredient.getAnotherPatty() + "\n");
+            } else {
+                System.out.println("A : " + anotherIngredient.getAnotherPatty() + "                     B : " + ingredient.getPatty() + "\n");
+            }
+            System.out.println("소스를 선택합니다.🧂 알파벳을 입력해주세요.😋\n");
+            if (source.trim().equals("A")) {
+                System.out.println("A : " + ingredient.getSource() + "                     B : " + anotherIngredient.getAnotherSource() + "\n");
+            } else {
+                System.out.println("A : " + anotherIngredient.getAnotherSource() + "                     B : " + ingredient.getSource() + "\n");
+            }
+
+        } else {
+            System.out.println("게임을 종료합니다.");
+            return;
+        }
+
 
     }
 }

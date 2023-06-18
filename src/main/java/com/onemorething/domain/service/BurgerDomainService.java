@@ -6,12 +6,8 @@ import java.util.Scanner;
 
 @Service
 public class BurgerDomainService { //로직
-    /*
-   1. 입력값 Char
-   2. if toEquals a b A B 아니면 다 처내면 됨
 
-     */
-
+    /* 설명. 원하는 입력 외 차단, 소문자 -> 대문자 변경 */
     public String getInput(Scanner sc, String option1, String option2) {
         String input = sc.next().toUpperCase();
 

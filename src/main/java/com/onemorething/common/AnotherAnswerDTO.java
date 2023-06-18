@@ -9,15 +9,15 @@ import lombok.*;
 @ToString
 public class AnotherAnswerDTO {
 
-    /* 설명. 랜덤 빵 */
+    /* 설명. 선택지 외 빵*/
     private String anotherAnsBread;
 
-    /* 설명. 랜덤 야채 */
+    /* 설명. 선택지 외 채소 */
     private String anotherAnsVeg;
 
-    /* 설명. 랜덤 패티 */
+    /* 설명. 선택지 외 패티 */
     private String anotherAnsPat;
 
-    /* 설명. 랜덤 소스 */
+    /* 설명. 선택지 외 소스*/
     private String anotherAnsSou;
 }
