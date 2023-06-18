@@ -63,3 +63,9 @@
 - PR에 모든 팀원이 코드 리뷰할 것
 - 마지막 리뷰어는 Merge 수행
 
+
+## 패키지 구조
+<img width="248" alt="image" src="https://github.com/mtvs-server-second-study/random-burger/assets/134987216/f1572b35-9125-4e87-bb0c-8ce780b4a913">
+
+  
+
