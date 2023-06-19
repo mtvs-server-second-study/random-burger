@@ -14,12 +14,16 @@ import java.util.Scanner;
 @Service
 public class BurgerService {
 
+    private final BurgerRepository burgerRepository;
+    private final IngredientRepository ingredientRepository;
+    private final BurgerDomainService burgerDomainService;
+
     @Autowired
-    BurgerRepository burgerRepository;
-    @Autowired
-    IngredientRepository ingredientRepository;
-    @Autowired
-    BurgerDomainService burgerDomainService;
+    public BurgerService(BurgerRepository burgerRepository, IngredientRepository ingredientRepository, BurgerDomainService burgerDomainService) {
+        this.burgerRepository = burgerRepository;
+        this.ingredientRepository = ingredientRepository;
+        this.burgerDomainService = burgerDomainService;
+    }
 
     int breadNum=0;
     int vegetableNum=0;

@@ -9,8 +9,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BurgerRepository {
 
+    private final BurgerDB burgerDB;
+
     @Autowired
-    private BurgerDB burgerDB;
+    public BurgerRepository(BurgerDB burgerDB) {
+        this.burgerDB = burgerDB;
+    }
 
     /* 설명. 답변에 대한 완성 버거 제공 */
     public String getResult(BurgerEntity ent) {
