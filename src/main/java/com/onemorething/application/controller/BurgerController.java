@@ -12,8 +12,13 @@ import java.util.Scanner;
 @Controller
 public class BurgerController {
 
+
+    private final BurgerService burgerService;
+
     @Autowired
-    BurgerService burgerService;
+    public BurgerController(BurgerService burgerService) {
+        this.burgerService = burgerService;
+    }
 
     /* 설명. 입력 검증 로직 */
     public String getInputController(Scanner sc, String option1, String option2) {
@@ -22,9 +27,9 @@ public class BurgerController {
     }
 
     /* 설명. 선택된 재료들을 application.service에 전달 / 완성된 버거 반환*/
-    public String makeBurger() {
+    public ResultDTO makeBurger() {
 
-       String result = burgerService.makeBurgerService();
+       ResultDTO result = burgerService.makeBurgerService();
 
         return result;
     }

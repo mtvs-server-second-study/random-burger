@@ -14,8 +14,8 @@ public class VegetableDB {
     /* 설명. 야채 DB */
     public VegetableDB() {
         this.vegetableList = new HashMap<>();
-        vegetableList.put(1, new IngredientEntity(1, "양상추", 1500));
-        vegetableList.put(2, new IngredientEntity(2, "페퍼론치노", 1700));
+        vegetableList.put(1, new IngredientEntity(1, "양상추"));
+        vegetableList.put(2, new IngredientEntity(2, "페퍼론치노"));
     }
 
     /* 설명. 랜덤 야채 제공*/

@@ -15,8 +15,8 @@ public class PattyDB {
     public PattyDB() {
         this.pattyList = new HashMap<>();
 
-        pattyList.put(1, new IngredientEntity(1, "비프", 3500));
-        pattyList.put(2, new IngredientEntity(2, "귀뚜라미튀김", 3000));
+        pattyList.put(1, new IngredientEntity(1, "비프"));
+        pattyList.put(2, new IngredientEntity(2, "귀뚜라미튀김"));
 
     }
 

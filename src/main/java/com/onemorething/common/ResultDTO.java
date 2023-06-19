@@ -2,12 +2,10 @@ package com.onemorething.common;
 
 import lombok.*;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-@ToString
+
 public class ResultDTO {
+
+    private String burger;
 
     /* 설명. 선택된 빵 */
     private String bread;
@@ -20,4 +18,6 @@ public class ResultDTO {
 
     /* 설명. 선택된 소스 */
     private String source;
+
+
 }

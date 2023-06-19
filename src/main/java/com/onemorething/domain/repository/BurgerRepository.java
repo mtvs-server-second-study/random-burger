@@ -9,18 +9,23 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class BurgerRepository {
 
-    @Autowired
-    private BurgerDB burgerDB;
+    private final BurgerDB burgerDB;
+
+
+    public BurgerRepository(BurgerDB burgerDB) {
+        this.burgerDB = burgerDB;
+    }
 
     /* 설명. 답변에 대한 완성 버거 제공 */
-    public String getResult(BurgerEntity ent) {
-        String result = " ";
+    public BurgerEntity getResult(BurgerEntity ent) {
+
+        BurgerEntity result = new BurgerEntity();
 
         for (BurgerEntity burger : burgerDB.getBurgerList().values()) {
             if (burger.getBread().equals(ent.getBread()) && burger.getVegetable().equals(ent.getVegetable())
                     && burger.getPatty().equals(ent.getPatty()) && burger.getSource().equals(ent.getSource())
             ) {
-                result = burger.getBurgerName();
+                result.setBurgerName(burger.getBurgerName());
             }
         }
 

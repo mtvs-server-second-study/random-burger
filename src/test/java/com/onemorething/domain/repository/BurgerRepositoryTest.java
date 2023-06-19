@@ -18,8 +18,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringJUnitConfig(classes = {ContextConfiguration.class})
 public class BurgerRepositoryTest {
 
+    private final BurgerRepository burgerRepository;
+
     @Autowired
-    private BurgerRepository burgerRepository;
+    public BurgerRepositoryTest(BurgerRepository burgerRepository) {
+        this.burgerRepository = burgerRepository;
+    }
 
     private BurgerEntity burgerEntity;
 
@@ -32,7 +36,7 @@ public class BurgerRepositoryTest {
     public void setUp() {
         System.out.println("setUp 동작 확인...");
 
-        this.burgerEntity = BurgerEntity.getBurgerEntity();
+        this.burgerEntity = burgerEntity;
     }
 
     @DisplayName("재료들로 버거 결과가 나오는지 확인")
@@ -44,10 +48,10 @@ public class BurgerRepositoryTest {
         String patty = "비프";
         String source = "바베큐";
 
-        String burger = burgerRepository.getResult(new BurgerEntity(bread, vegetable, patty, source));
+        BurgerEntity burger = burgerRepository.getResult(new BurgerEntity(bread, vegetable, patty, source));
 
-        System.out.println("burger = " + burger);
-        Assertions.assertEquals("바베큐불고기버거", burger);
+        System.out.println("burger = " + burger.getBurgerName());
+        Assertions.assertEquals("바베큐불고기버거", burger.getBurgerName());
     }
 
 }

@@ -15,8 +15,8 @@ public class SourceDB {
     public SourceDB() {
         this.sourceList = new HashMap<>();
 
-        sourceList.put(1, new IngredientEntity(1, "바베큐", 500));
-        sourceList.put(2, new IngredientEntity(2, "민초", 800));
+        sourceList.put(1, new IngredientEntity(1, "바베큐"));
+        sourceList.put(2, new IngredientEntity(2, "민초"));
 
     }
 

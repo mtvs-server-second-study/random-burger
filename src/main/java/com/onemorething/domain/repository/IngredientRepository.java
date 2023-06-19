@@ -12,20 +12,19 @@ import java.util.Map;
 @Repository
 public class IngredientRepository {
 
-    @Autowired
-    BreadDB breadDB;
+    private final BreadDB breadDB;
+    private final VegetableDB vegetableDB;
+    private final PattyDB pattyDB;
+    private final SourceDB sourceDB;
 
     @Autowired
-    VegetableDB vegetableDB;
+    public IngredientRepository(BreadDB breadDB, VegetableDB vegetableDB, PattyDB pattyDB, SourceDB sourceDB) {
+        this.breadDB = breadDB;
+        this.vegetableDB = vegetableDB;
+        this.pattyDB = pattyDB;
+        this.sourceDB = sourceDB;
+    }
 
-    @Autowired
-    PattyDB pattyDB;
-
-    @Autowired
-    SourceDB sourceDB;
-
-
-    /* 설명. 빵 선택*/
     public String getBread(int seq) {return breadDB.getBreadList().get(seq).getName();}
 
     public String getVegetable(int seq) { return vegetableDB.getVegetableList().get(seq).getName(); }

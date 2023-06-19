@@ -15,8 +15,8 @@ public class BreadDB {
     public BreadDB() {
         this.breadList = new HashMap<>();
 
-        breadList.put(1, new IngredientEntity(1, "참깨빵", 2000));
-        breadList.put(2, new IngredientEntity(2, "꽃빵", 2000));
+        breadList.put(1, new IngredientEntity(1, "참깨빵"));
+        breadList.put(2, new IngredientEntity(2, "꽃빵"));
     }
 
     /* 설명. 빵 제공 */
