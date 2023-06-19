@@ -54,30 +54,15 @@ public class BurgerService {
         return input;
     }
 
-    /* 설명. 버거 조리 */
     public ResultDTO makeBurgerService() {
 
-        ResultDTO resultDTO = new ResultDTO();
-
-        /* 설명. 부여된 랜덤 번호로 해당하는 재료 선택 */
         String answerBread = ingredientRepository.getBread(breadNum);
         String answerVegetable = ingredientRepository.getVegetable(vegetableNum);
         String answerPatty = ingredientRepository.getPatty(pattyNum);
         String answerSource = ingredientRepository.getSource(sourceNum);
 
-        /* 설명. 선택된 재료들로 일치하는 버거 조회 */
-        String result = burgerRepository.getResult(new BurgerEntity(answerBread, answerVegetable, answerPatty, answerSource)).getBurgerName();
-        return  ;
-    }
-
-    /* 설명. 재료들 이름 반환 */
-    public ResultDTO setIngredientService() {
-
-        /* 설명. 선택된 재료들 이름 반환 */
-        ResultDTO result = new ResultDTO(ingredientRepository.getBread(breadNum), ingredientRepository.getVegetable(vegetableNum),
-                ingredientRepository.getPatty(pattyNum), ingredientRepository.getSource(sourceNum));
-
-        return result;
+        String burger = burgerRepository.getResult(new BurgerEntity(answerBread, answerVegetable, answerPatty, answerSource)).getBurgerName();
+        return new ResultDTO(burger, answerBread, answerVegetable, answerPatty, answerSource);
     }
 
     /* 설명. 선택지 외 재료 선정 */

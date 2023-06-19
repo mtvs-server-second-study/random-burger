@@ -34,16 +34,16 @@ public class BurgerController {
         return result;
     }
 
-    /* 설명. 선택된 재료들을 application.service에 전달 / 선택된 재료들 반환 */
-    public ResultDTO setIngCtrl() {
-        ResultDTO resultDTO = burgerService.setIngredientService();
-        return resultDTO;
-    }
+//    /* 설명. 선택된 재료들을 application.service에 전달 / 선택된 재료들 반환 */
+//    public ResultDTO setIngCtrl() {
+//        ResultDTO resultDTO = burgerService.setIngredientService();
+//        return resultDTO;
+//    }
 
     /* 설명. 선택지 외 재료들을 application.service에 전달 / 선택지 재료들 반환 */
     public AnotherResultDTO setAnotherIngCtrl() {
-        AnotherResultDTO resultDTO = burgerService.setAnotherIngredientService();
-        return resultDTO;
+        AnotherResultDTO anotherIngredient = burgerService.setAnotherIngredientService();
+        return anotherIngredient;
     }
 
 }

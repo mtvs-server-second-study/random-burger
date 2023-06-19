@@ -11,7 +11,6 @@ public class PattyDB {
 
     private Map<Integer, IngredientEntity> pattyList;
 
-    /* 설명. 패티 DB */
     public PattyDB() {
         this.pattyList = new HashMap<>();
 
@@ -20,9 +19,7 @@ public class PattyDB {
 
     }
 
-    /* 설명. 패티 제공*/
     public String getPatty(int seq) {return pattyList.get(seq).getName();}
 
-    /* 설명. 패티 전체 조회*/
     public Map<Integer, IngredientEntity> getPattyList() {return pattyList;}
 }
