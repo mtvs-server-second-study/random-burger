@@ -11,10 +11,16 @@ import java.util.Scanner;
 
 @Component
 public class BurgerView {
+
+    private final BurgerController burgerController;
+    private final BurgerDomainService burgerDomainService;
+
     @Autowired
-    BurgerController burgerController;
-    @Autowired
-    BurgerDomainService burgerDomainService;
+    public BurgerView(BurgerController burgerController, BurgerDomainService burgerDomainService) {
+        this.burgerController = burgerController;
+        this.burgerDomainService = burgerDomainService;
+    }
+
     private String bread;
     private String anotherBread;
     private String vegetable;

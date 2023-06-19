@@ -12,8 +12,11 @@ import java.util.Scanner;
 @Controller
 public class BurgerController {
 
+    private final BurgerService burgerService;
     @Autowired
-    BurgerService burgerService;
+    public BurgerController(BurgerService burgerService) {
+        this.burgerService = burgerService;
+    }
 
     /* 설명. 입력 검증 로직 */
     public String getInputController(Scanner sc, String option1, String option2) {

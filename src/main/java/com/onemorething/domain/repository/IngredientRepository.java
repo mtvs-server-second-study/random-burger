@@ -12,17 +12,18 @@ import java.util.Map;
 @Repository
 public class IngredientRepository {
 
-    @Autowired
-    BreadDB breadDB;
+    public final BreadDB breadDB;
+    public final VegetableDB vegetableDB;
+    public final PattyDB pattyDB;
+    public final SourceDB sourceDB;
 
     @Autowired
-    VegetableDB vegetableDB;
-
-    @Autowired
-    PattyDB pattyDB;
-
-    @Autowired
-    SourceDB sourceDB;
+    public IngredientRepository(BreadDB breadDB, VegetableDB vegetableDB, PattyDB pattyDB, SourceDB sourceDB) {
+        this.breadDB = breadDB;
+        this.vegetableDB = vegetableDB;
+        this.pattyDB = pattyDB;
+        this.sourceDB = sourceDB;
+    }
 
 
     /* 설명. 빵 선택*/

@@ -2,14 +2,8 @@ package com.onemorething.domain.entity;
 
 import lombok.*;
 
-//@NoArgsConstructor
-//@AllArgsConstructor
-@Setter
-@Getter
-@ToString
-public class BurgerEntity { //DB에 넣을것 파싱
 
-    private static BurgerEntity burgerEntity;
+public class BurgerEntity { //DB에 넣을것 파싱
 
     /* 설명. 버거 번호 */
     private int sequence;
@@ -25,8 +19,6 @@ public class BurgerEntity { //DB에 넣을것 파싱
     private String source;
     /* 설명. 버거 가격 */
     private int price;
-
-    public BurgerEntity() {}
 
     public BurgerEntity(int sequence, String burgerName, String bread, String vegetable, String patty, String source, int price){
         this.sequence = sequence;
@@ -44,10 +36,23 @@ public class BurgerEntity { //DB에 넣을것 파싱
         this.source = source;
     }
 
-    public static BurgerEntity getBurgerEntity() {
-        if (burgerEntity == null) {
-            burgerEntity = new BurgerEntity();
-        }
-        return burgerEntity;
+    public String getBread() {
+        return bread;
+    }
+
+    public String getBurgerName() {
+        return burgerName;
+    }
+
+    public String getVegetable() {
+        return vegetable;
+    }
+
+    public String getPatty() {
+        return patty;
+    }
+
+    public String getSource() {
+        return source;
     }
 }

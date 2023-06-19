@@ -1,10 +1,11 @@
 package com.onemorething.domain.service;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
-@Service
+@Component
 public class BurgerDomainService { //로직
 
     /* 설명. 원하는 입력 외 차단, 소문자 -> 대문자 변경 */
