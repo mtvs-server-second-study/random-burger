@@ -27,7 +27,7 @@ class BurgerDomainServiceTest {
         assertNotNull(burgerDomainService);
     }
 
-    @DisplayName("난수 자연수 발생기 테스트 : 범위를 1~2로 정햇을 때 잘 나오는지 확인")
+    @DisplayName("난수 자연수 발생기 테스트 : 범위를 1~2로 정했을 때 잘 나오는지 확인")
     @Test
     public void testRandomInt() {
 
