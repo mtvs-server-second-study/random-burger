@@ -106,7 +106,7 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 빵 선택 */
         System.out.print("빵 선택 : ");
-        bread = burgerController.getInputController(sc, "A", "B");
+//        bread = burgerController.getInputController(sc, "A", "B");
         anotherBread = bread.trim().equals("A")? "B" : "A";
         System.out.println("  ████  ████      ██████  ████  ██       \n" +
                         "  ██                            ██       \n" +
@@ -127,7 +127,7 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 야채 선택*/
         System.out.print("채소 선택 : ");
-        vegetable = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+//        vegetable = burgerController.getInputController(sc, "A", "B");
         anotherVegetable = vegetable.trim().equals("A")? "B":"A";
         System.out.println("██░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░██     \n" +
                            "  ██░░██░░░░██████░░░░░░██░░░░████       \n\n\n");
@@ -146,7 +146,7 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 패티 선택 */
         System.out.print("패티 선택 : ");
-        patty = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+//        patty = burgerController.getInputController(sc, "A", "B");
         anotherPatty = patty.trim().equals("A")? "B":"A";
         System.out.println("██▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓██    \n" +
                            "  ████████████████████████████████        \n\n\n");
@@ -165,7 +165,7 @@ public class BurgerView {
         System.out.println("        (1) A                     (2) B\n");
         /* 설명. 소스 선택 */
         System.out.print("소스 선택 : ");
-        source = burgerController.getInputController(sc, "A", "B");      // 필기. 문자열로 받아 service로 로직 설계
+//        source = burgerController.getInputController(sc, "A", "B");
         anotherSource = source.trim().equals("A")? "A" : "B";
         System.out.println("████████████████████████████████████    \n\n\n");
 
