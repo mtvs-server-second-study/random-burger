@@ -1,10 +1,12 @@
 package com.onemorething.domain.service;
 
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
-@Service
+
+@Component
 public class BurgerDomainService {
 
     public String getInput(Scanner sc, String option1, String option2) {

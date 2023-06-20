@@ -31,7 +31,7 @@ public class BurgerService {
 
         initFieldWithRandomValue();
     }
-
+  
     private void initFieldWithRandomValue() {
         int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
         breadNum = randomSequence[0];

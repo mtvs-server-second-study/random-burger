@@ -12,7 +12,6 @@ import java.util.Scanner;
 @Controller
 public class BurgerController {
 
-
     private final BurgerService burgerService;
 
     @Autowired
