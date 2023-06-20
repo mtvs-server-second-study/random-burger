@@ -18,56 +18,51 @@ public class BurgerService {
     private final IngredientRepository ingredientRepository;
     private final BurgerDomainService burgerDomainService;
 
+    private int breadNum;
+    private int vegetableNum;
+    private int pattyNum;
+    private int sourceNum;
+
     @Autowired
     public BurgerService(BurgerRepository burgerRepository, IngredientRepository ingredientRepository, BurgerDomainService burgerDomainService) {
         this.burgerRepository = burgerRepository;
         this.ingredientRepository = ingredientRepository;
         this.burgerDomainService = burgerDomainService;
+
+        initFieldWithRandomValue();
+    }
+  
+    private void initFieldWithRandomValue() {
+        int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
+        breadNum = randomSequence[0];
+        vegetableNum = randomSequence[1];
+        pattyNum = randomSequence[2];
+        sourceNum = randomSequence[3];
     }
 
-    int breadNum=0;
-    int vegetableNum=0;
-    int pattyNum=0;
-    int sourceNum=0;
-
-    /* 설명. 입력 검증 로직 */
+    /** <pre>
+     *   입력 값에 대한 검증을 처리하는 로직
+     * </pre>
+     * @Param option1 파라미터에 대한 설명
+     * @Param option2 파라미터에 대한 설명
+     * @Return 리턴값에 대한 설명
+     * @Author 작성자명
+     * @History 2023-06-19 최초 작성함 (김진호)
+     * */
     public String getInputService(Scanner sc, String option1, String option2) {
         String input = burgerDomainService.getInput(sc, option1, option2);
         return input;
     }
 
-    /* 설명. 버거 조리 */
-    public String makeBurgerService() {
+    public ResultDTO makeBurgerService() {
 
-        /* 설명. 선택지 랜덤 번호 부여 */
-        /* 설명. 난수 배열 발생기, 자연수 4개, 1 혹은 2 */
-        int[] randomSequence = burgerDomainService.getRandomInt(4, 1, 2);
-
-        /* 설명. 랜덤 값 필드 부여 */
-        breadNum = randomSequence[0];
-        vegetableNum = randomSequence[1];
-        pattyNum = randomSequence[2];
-        sourceNum = randomSequence[3];
-
-        /* 설명. 부여된 랜덤 번호로 해당하는 재료 선택 */
         String answerBread = ingredientRepository.getBread(breadNum);
         String answerVegetable = ingredientRepository.getVegetable(vegetableNum);
         String answerPatty = ingredientRepository.getPatty(pattyNum);
         String answerSource = ingredientRepository.getSource(sourceNum);
 
-        /* 설명. 선택된 재료들로 일치하는 버거 조회 */
-        String result = burgerRepository.getResult(new BurgerEntity(answerBread, answerVegetable, answerPatty, answerSource));
-        return  result;
-    }
-
-    /* 설명. 재료들 이름 반환 */
-    public ResultDTO setIngredientService() {
-
-        /* 설명. 선택된 재료들 이름 반환 */
-        ResultDTO result = new ResultDTO(ingredientRepository.getBread(breadNum), ingredientRepository.getVegetable(vegetableNum),
-                ingredientRepository.getPatty(pattyNum), ingredientRepository.getSource(sourceNum));
-
-        return result;
+        String burger = burgerRepository.getResult(new BurgerEntity(answerBread, answerVegetable, answerPatty, answerSource)).getBurgerName();
+        return new ResultDTO(burger, answerBread, answerVegetable, answerPatty, answerSource);
     }
 
     /* 설명. 선택지 외 재료 선정 */

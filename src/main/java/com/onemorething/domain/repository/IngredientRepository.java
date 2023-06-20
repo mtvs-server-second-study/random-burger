@@ -12,10 +12,10 @@ import java.util.Map;
 @Repository
 public class IngredientRepository {
 
-    public final BreadDB breadDB;
-    public final VegetableDB vegetableDB;
-    public final PattyDB pattyDB;
-    public final SourceDB sourceDB;
+    private final BreadDB breadDB;
+    private final VegetableDB vegetableDB;
+    private final PattyDB pattyDB;
+    private final SourceDB sourceDB;
 
     @Autowired
     public IngredientRepository(BreadDB breadDB, VegetableDB vegetableDB, PattyDB pattyDB, SourceDB sourceDB) {
@@ -25,8 +25,6 @@ public class IngredientRepository {
         this.sourceDB = sourceDB;
     }
 
-
-    /* 설명. 빵 선택*/
     public String getBread(int seq) {return breadDB.getBreadList().get(seq).getName();}
 
     public String getVegetable(int seq) { return vegetableDB.getVegetableList().get(seq).getName(); }

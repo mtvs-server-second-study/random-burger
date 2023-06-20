@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class BurgerController {
 
     private final BurgerService burgerService;
+
     @Autowired
     public BurgerController(BurgerService burgerService) {
         this.burgerService = burgerService;
@@ -25,23 +26,23 @@ public class BurgerController {
     }
 
     /* 설명. 선택된 재료들을 application.service에 전달 / 완성된 버거 반환*/
-    public String makeBurger() {
+    public ResultDTO makeBurger() {
 
-       String result = burgerService.makeBurgerService();
+       ResultDTO result = burgerService.makeBurgerService();
 
         return result;
     }
 
-    /* 설명. 선택된 재료들을 application.service에 전달 / 선택된 재료들 반환 */
-    public ResultDTO setIngCtrl() {
-        ResultDTO resultDTO = burgerService.setIngredientService();
-        return resultDTO;
-    }
+//    /* 설명. 선택된 재료들을 application.service에 전달 / 선택된 재료들 반환 */
+//    public ResultDTO setIngCtrl() {
+//        ResultDTO resultDTO = burgerService.setIngredientService();
+//        return resultDTO;
+//    }
 
     /* 설명. 선택지 외 재료들을 application.service에 전달 / 선택지 재료들 반환 */
     public AnotherResultDTO setAnotherIngCtrl() {
-        AnotherResultDTO resultDTO = burgerService.setAnotherIngredientService();
-        return resultDTO;
+        AnotherResultDTO anotherIngredient = burgerService.setAnotherIngredientService();
+        return anotherIngredient;
     }
 
 }

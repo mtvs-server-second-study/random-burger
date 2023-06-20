@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
-@Component
-public class BurgerDomainService { //로직
 
-    /* 설명. 원하는 입력 외 차단, 소문자 -> 대문자 변경 */
+@Component
+public class BurgerDomainService {
+
     public String getInput(Scanner sc, String option1, String option2) {
         String input = sc.next().toUpperCase();
 
@@ -20,7 +20,6 @@ public class BurgerDomainService { //로직
         return input;
     }
 
-    // 설명. 정한 범위에서 자연수가 나오는 난수 발생기
     public int[] getRandomInt(int index, int lowerBound, int highBound){
 
         int[] randomSequence = new int[index];
