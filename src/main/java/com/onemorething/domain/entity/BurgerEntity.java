@@ -36,11 +36,6 @@ public class BurgerEntity {
         return burgerName;
     }
 
-    public String getBread() {
-        return bread;
-
-    }
-
     public String getVegetable() {
         return vegetable;
     }
