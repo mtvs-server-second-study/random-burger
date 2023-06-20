@@ -1,6 +1,8 @@
 package com.onemorething.domain.entity;
 
+
 public class BurgerEntity {
+
     private String burgerName;
     private String bread;
     private String vegetable;
@@ -26,12 +28,17 @@ public class BurgerEntity {
         this.source = source;
     }
 
+    public String getBread() {
+        return bread;
+    }
+
     public String getBurgerName() {
         return burgerName;
     }
 
     public String getBread() {
         return bread;
+
     }
 
     public String getVegetable() {

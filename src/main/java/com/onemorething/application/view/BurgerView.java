@@ -17,7 +17,7 @@ public class BurgerView {
     private final BurgerDomainService burgerDomainService;
 
     @Autowired
-    public BurgerView(BurgerController burgerController, BurgerDomainService burgerDomainService){
+    public BurgerView(BurgerController burgerController, BurgerDomainService burgerDomainService) {
         this.burgerController = burgerController;
         this.burgerDomainService = burgerDomainService;
     }

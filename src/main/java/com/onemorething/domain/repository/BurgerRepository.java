@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
 public class BurgerRepository {
 
     private final BurgerDB burgerDB;
-
     private BurgerEntity burgerEntity;
 
     @Autowired
